@@ -3,11 +3,7 @@
 const app = new Vue({
     el : '#root',
     data : {
-        newItemList :
-            {
-                text: '',
-                done: false
-            },
+        newItemList : '',
         arrToDoItems : [
             {
                 text : 'Fare la spesa',
@@ -32,11 +28,9 @@ const app = new Vue({
             this.arrToDoItems.splice(index, 1);
         },
         addItemList() {
-            if (this.newItemList.text.trim() != '') {
-
-            this.arrToDoItems.push(this.newItemList);
-            this.newItemList = {};
-
+            if (this.newItemList.trim() != '') {
+            this.arrToDoItems.push({text: this.newItemList, done: false});
+            this.newItemList = '';
             }
         }
     }

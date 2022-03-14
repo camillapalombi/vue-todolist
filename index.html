@@ -18,13 +18,13 @@
         <div id="root">
 
             <div class="container-add-items">
-                <input @keyup.enter="addItemList" v-model="newItemList.text" type="text" placeholder="Che cos'hai da fare oggi?" id="input-add-item">
+                <input @keyup.enter="addItemList" v-model="newItemList" type="text" placeholder="Che cos'hai da fare oggi?" id="input-add-item">
                 <button @click="addItemList" class="add-item">Aggiungi</button>
             </div>
 
             <ul>
-                <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''" @click="items.done = !items.done">
-                    <div class="text-item"> {{ items.text }} </div>
+                <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''">
+                    <div @click="items.done = !items.done" class="text-item"> {{ items.text }} </div>
                     <button @click="deleteItemList(index)" class="delete-item"><i class="fa-solid fa-xmark"></i></button>
                 </li>
             </ul>

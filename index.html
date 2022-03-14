@@ -17,6 +17,10 @@
         <!--CONTAINER VUE.JS-->
         <div id="root">
 
+            <ul>
+                <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''"> {{ items.text }}</li>
+            </ul>
+
 
 
 

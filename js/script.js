@@ -3,6 +3,12 @@
 const app = new Vue({
     el : '#root',
     data : {
+        newItemList : [
+            {
+                text: '',
+                done: false
+            }
+        ],
         arrToDoItems : [
             {
                 text : 'Fare la spesa',
@@ -25,6 +31,14 @@ const app = new Vue({
     methods : { //funzione per eliminare gli elementi dalla lista
         deleteItemList(index) {
             this.arrToDoItems.splice(index, 1);
+        },
+        addItemList() {
+            if (this.newItemList.text.trim() != '') {
+
+            this.arrToDoItems.push(this.newItemList);
+            this.newItemList = {};
+
+            }
         }
     }
 });

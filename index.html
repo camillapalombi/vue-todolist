@@ -17,6 +17,11 @@
         <!--CONTAINER VUE.JS-->
         <div id="root">
 
+            <div class="container-add-items">
+                <input v-model="newItemList.text" type="text" placeholder="Che cos'hai da fare oggi?">
+                <button @click="addItemList" class="add-item">Aggiungi</button>
+            </div>
+
             <ul>
                 <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''">
                     <div class="text-item"> {{ items.text }} </div>

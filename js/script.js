@@ -23,7 +23,7 @@ const app = new Vue({
         ]
     },
     methods : { //funzione per eliminare gli elementi dalla lista
-        deleteItemList() {
+        deleteItemList(index) {
             this.arrToDoItems.splice(index, 1);
         }
     }

@@ -20,7 +20,7 @@
             <ul>
                 <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''">
                     <div class="text-item"> {{ items.text }} </div>
-                    <button @click="deleteItemList()" class="delete-item"><i class="fa-solid fa-xmark"></i></button>
+                    <button @click="deleteItemList(index)" class="delete-item"><i class="fa-solid fa-xmark"></i></button>
                 </li>
             </ul>
 

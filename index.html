@@ -18,7 +18,10 @@
         <div id="root">
 
             <ul>
-                <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''"> {{ items.text }}</li>
+                <li v-for="(items, index) in arrToDoItems" :class="items.done == true ? 'done-true' : ''">
+                    <div class="text-item"> {{ items.text }} </div>
+                    <button @click="deleteItemList()" class="delete-item"><i class="fa-solid fa-xmark"></i></button>
+                </li>
             </ul>
 
 
@@ -39,6 +42,3 @@
 
 </body>
 </html>
-
-
-<!--<i class="fa-solid fa-xmark"></i>-->

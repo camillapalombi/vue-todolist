@@ -3,12 +3,11 @@
 const app = new Vue({
     el : '#root',
     data : {
-        newItemList : [
+        newItemList :
             {
                 text: '',
                 done: false
-            }
-        ],
+            },
         arrToDoItems : [
             {
                 text : 'Fare la spesa',
